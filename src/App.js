@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+// import BirthComponent from './component/BirthComponent';
+// import GreetingComponent from './component/GreetingCompent';
+// import ConditionalComponent from './component/ConditionalComponent';
+// import CombinedComponent from './component/CombinedComponent';
+// import CalcOne from './component/Calc';
+// import PropsText from './component/PropsText';
+import DynamicComp from './component/DynamicComp';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {/* <BirthComponent />
+     <GreetingComponent />
+     <ConditionalComponent isVIP={true}/>
+     <ConditionalComponent isVIP={false}/>
+     <CombinedComponent />
+     <CalcOne numOne={5} numTwo={7}/>
+     <PropsText /> */}
+    <DynamicComp />
+    <DynamicComp title="研發處" thick="5" color='red' option={true}/>
+    <DynamicComp title="人資處" thick="10" color='blue' option={false}/>
     </div>
   );
 }
