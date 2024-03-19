@@ -6,7 +6,9 @@ import './App.css';
 // import CalcOne from './component/Calc';
 // import PropsText from './component/PropsText';
 // import DynamicComp from './component/DynamicComp';
-import Students from './component/Students';
+// import Students from './component/Students';
+// import EventCounts from './component/EventControlTest';
+import UserTest from './component/UserTest';
 
 
 function App() {
@@ -22,7 +24,9 @@ function App() {
     {/* <DynamicComp />
     <DynamicComp title="研發處" thick="5" color='red' option={true}/>
     <DynamicComp title="人資處" thick="10" color='blue' option={false}/> */}
-    <Students />
+    {/* <Students /> */}
+    {/* <EventCounts /> */}
+    <UserTest />
     </div>
   );
 }

@@ -20,35 +20,33 @@ const Students = () => {
             <h2>
                 Origin Scores
             </h2>
-            {students.map((student, index) => (
 
+            <hr />
+            
+            {students.map((student, index) => (
                 <div key={index}>
                     <h4>{student.name}---{student.score}</h4>
                 </div>
-
             ))}
 
             <hr />
 
             {students.map((student, index) => (
-
                 <div key={index}>
                     <h4>{student.name}---{index % 2 === 0 ? student.score + 10 : student.score - 10}</h4>
                 </div>
-
             ))}
 
             <hr />
 
             {students.map((student, index) => (
-                
-
                 <div key={index}>
-
                     <h4>{student.name}---{student.score < 80 ? student.score=100 : student.score}</h4>
                 </div>
-
             ))}
+
+            <hr />
+
 
         </div>
     );
