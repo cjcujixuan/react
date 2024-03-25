@@ -8,7 +8,8 @@ import './App.css';
 // import DynamicComp from './component/DynamicComp';
 // import Students from './component/Students';
 // import EventCounts from './component/EventControlTest';
-import UserTest from './component/UserTest';
+// import UserTest from './component/UserTest';
+import EventCounts from './component/Count';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
     <DynamicComp title="人資處" thick="10" color='blue' option={false}/> */}
     {/* <Students /> */}
     {/* <EventCounts /> */}
-    <UserTest />
+    {/* <UserTest /> */}
+    <EventCounts />
     </div>
   );
 }

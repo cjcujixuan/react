@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const EventCounts = () => {
     const [countValue, setCountValue] = useState(0)
     const handleClickAdd = () => [
@@ -37,7 +36,5 @@ const EventCounts = () => {
 
 
 }
-
-
 
 export default EventCounts;
