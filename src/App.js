@@ -9,7 +9,9 @@ import './App.css';
 // import Students from './component/Students';
 // import EventCounts from './component/EventControlTest';
 // import UserTest from './component/UserTest';
-import EventCounts from './component/Count';
+// import EventCounts from './component/Count';
+// import KeyPressEvent from './component/KeyTest';
+import ImgEvent from './component/ImgControl';
 
 
 function App() {
@@ -28,7 +30,9 @@ function App() {
     {/* <Students /> */}
     {/* <EventCounts /> */}
     {/* <UserTest /> */}
-    <EventCounts />
+    {/* <EventCounts /> */}
+    {/* <KeyPressEvent /> */}
+    <ImgEvent />
     </div>
   );
 }

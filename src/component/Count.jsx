@@ -10,8 +10,8 @@ const EventCounts = () => {
         setCountValue2(parseInt(inputValue2));
     };
 
-    const [inputValue1, setInputValue1] = useState("");
-    const [inputValue2, setInputValue2] = useState("");
+    const [inputValue1, setInputValue1] = useState(0);
+    const [inputValue2, setInputValue2] = useState(0);
 
     const handleChangeInput1 = (e) => {
         setInputValue1(e.target.value);
