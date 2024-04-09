@@ -11,7 +11,9 @@ import './App.css';
 // import UserTest from './component/UserTest';
 // import EventCounts from './component/Count';
 // import KeyPressEvent from './component/KeyTest';
-import ImgEvent from './component/ImgControl';
+// import ImgEvent from './component/ImgControl';
+// import InputControl from './component/InputControl';
+import AddTodo from './component/AprilNineTh';
 
 
 function App() {
@@ -32,7 +34,9 @@ function App() {
     {/* <UserTest /> */}
     {/* <EventCounts /> */}
     {/* <KeyPressEvent /> */}
-    <ImgEvent />
+    {/* <ImgEvent /> */}
+    {/* <InputControl/> */}
+    <AddTodo />
     </div>
   );
 }
