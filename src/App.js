@@ -13,7 +13,8 @@ import './App.css';
 // import KeyPressEvent from './component/KeyTest';
 // import ImgEvent from './component/ImgControl';
 // import InputControl from './component/InputControl';
-import AddTodo from './component/AprilNineTh';
+// import AddTodo from './component/AprilNineTh';
+import Cart from './component/Cart';
 
 
 function App() {
@@ -36,7 +37,9 @@ function App() {
     {/* <KeyPressEvent /> */}
     {/* <ImgEvent /> */}
     {/* <InputControl/> */}
-    <AddTodo />
+    {/* <AddTodo /> */}
+    <Cart />
+    
     </div>
   );
 }
