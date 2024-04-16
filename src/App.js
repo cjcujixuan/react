@@ -14,7 +14,11 @@ import './App.css';
 // import ImgEvent from './component/ImgControl';
 // import InputControl from './component/InputControl';
 // import AddTodo from './component/AprilNineTh';
-import Cart from './component/Cart';
+// import Cart from './component/Cart';
+// import Login from './component/Login';
+// import EffectLoadData from './component/EffectLoadData';
+import TopNavbar from './component/Test';
+
 
 
 function App() {
@@ -38,7 +42,10 @@ function App() {
     {/* <ImgEvent /> */}
     {/* <InputControl/> */}
     {/* <AddTodo /> */}
-    <Cart />
+    {/* <Cart /> */}
+    {/* <Login /> */}
+    {/* <EffectLoadData/> */}
+    <TopNavbar/>
     
     </div>
   );

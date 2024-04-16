@@ -1,0 +1,54 @@
+.top-navbar {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* 将选项居中对齐 */
+  }
+  
+  li {
+    margin-right: 10px;
+  }
+  
+  li.active {
+    border-bottom: 2px solid #fff;
+  }
+  
+  button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .page-content {
+    margin-top: 20px;
+  }
+  
+  .page {
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .red {
+    background-color: #ff5733;
+  }
+  
+  .blue {
+    background-color: #3399ff;
+  }
+  
+  .yellow {
+    background-color: #ffff66;
+  }
+  
+  .green {
+    background-color: #33cc33;
+  }
+  
