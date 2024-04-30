@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TopNavbar.css';
 
 const TopNavbar = () => {
@@ -26,66 +26,136 @@ const TopNavbar = () => {
                 {currentPage === 'four' && <FourPage />}
             </div>
         </>
-
     );
 };
 
-//1頁面
-const smallSize = {
-    height: '100px',
-    width: '100px',
-    border: '2px solid orange',
-    padding: '10px',
-    margin: '10px'
-};
-const bigSize = {
-    height: '200px',
-    width: '200px',
-    border: '3px solid blue',
-    padding: '20px',
-    margin: '20px'
-};
-const [myStyle, setMyStyle] = useState(smallSize);
-const handleClickSmall = () => {
-    setMyStyle(smallSize)
-};
-const handleClickBig = () => {
-    setMyStyle(bigSize);
-};
-//1頁面
-const OnePage = () =>
-    <>
-        <div>
-            <button onClick={handleClickSmall}>smallSize</button>
-            <button onClick={handleClickBig}>bigSize</button>
-            <br />
-            {Array.from({ length: 20 }, (_item, index) => (
-                <img key={index} src={`https://picsum.photos/300/200?random=${index}`} style={myStyle}></img>
-            ))}
+const OnePage = () => {
+    const [data, setData] = useState([]);
+    const [filter, setFilter] = useState('');
 
-        </div>
-    </>
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users/1/todos')
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }, []);
 
-//2頁面
-const TwoPage = () =>
-    <>
+    const handleFilter = (e) => setFilter(e.target.value);
+    const filteredItems = data.filter(user => user.title.toLowerCase().includes(filter.toLowerCase()));
+
+    return (
         <div>
-            2
+            <input type='text' value={filter} onChange={handleFilter} placeholder="Filter items..." />
+            <hr />
+            <div className="card-container">
+                {data.length > 0 ? (
+                    filteredItems.map(user => (
+                        <div key={user.userId} className={`card ${user.completed ? 'completed' : 'incomplete'}`}>
+                            <h2>{user.id}</h2>
+                            <h3>{user.title}</h3>
+                            <h5>{user.completed ? 'Completed' : 'Incomplete'}</h5>
+                        </div>
+                    ))
+                ) : (
+                    <p>Data loading...</p>
+                )}
+            </div>
         </div>
-    </>
-//3頁面
-const ThreePage = () =>
-    <>
+    );
+};
+
+const TwoPage = () => {
+    const [data, setData] = useState([]);
+    const [filter, setFilter] = useState('');
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }, []);
+
+    const handleFilter = (e) => setFilter(e.target.value);
+    const filteredItems = data.filter(user => user.name.toLowerCase().includes(filter.toLowerCase()));
+
+    return (
         <div>
-            3
+            <input type='text' value={filter} onChange={handleFilter} placeholder="Filter items..." />
+            <hr />
+            <ul>
+                {data.length > 0 ? (
+                    filteredItems.map(user => (
+                        <div key={user.id} className={'card pgTwo'}>
+                            <h2>{user.name}</h2>
+                            <h3>{user.phone}</h3>
+                            <h5>{user.email}</h5>
+                            <p>{user.website}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p>Data loading...</p>
+                )}
+            </ul>
         </div>
-    </>
-//4頁面
-const FourPage = () =>
-    <>
+    );
+};
+
+const ThreePage = () => {
+    const [data, setData] = useState([]);
+    const [filter, setFilter] = useState('');
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users/1/todos')
+            .then((response) => response.json())
+            .then((data) => {
+                setData(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }, []);
+
+    const handleFilter = (e) => setFilter(e.target.value);
+    const filteredItems = data.filter(user => user.title.toLowerCase().includes(filter.toLowerCase()));
+
+    return (
         <div>
-            4
+            <input type='text' value={filter} onChange={handleFilter} placeholder="Filter items..." />
+            <hr />
+            <div className="card-container">
+                {data.length > 0 ? (
+                    filteredItems.map(user => (
+                        <div key={user.userId} className={`cardThree ${user.completed ? 'completed' : 'incomplete'}`}>
+                            <h2>{user.id}</h2>
+                            <img src={`https://picsum.photos/300/200?random=${user.id}`} alt="Avatar" className="imgThree" style={{ opacity: '0.85' }} />
+                            <h3>{user.title}</h3>
+                            <h5>{user.completed ? 'Completed' : 'Incomplete'}</h5>
+                        </div>
+                    ))
+                ) : (
+                    <p>Data loading...</p>
+                )}
+            </div>
         </div>
-    </>
+    );
+};
+
+
+
+
+
+
+
+const FourPage = () => (
+    <div>4</div>
+);
 
 export default TopNavbar;

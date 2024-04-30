@@ -1,54 +1,127 @@
 .top-navbar {
-    background-color: #333;
-    padding: 10px 0;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* 将选项居中对齐 */
-  }
-  
-  li {
-    margin-right: 10px;
-  }
-  
-  li.active {
-    border-bottom: 2px solid #fff;
-  }
-  
-  button {
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .page-content {
-    margin-top: 20px;
-  }
-  
-  .page {
-    padding: 20px;
-    color: #fff;
-  }
-  
-  .red {
-    background-color: #ff5733;
-  }
-  
-  .blue {
-    background-color: #3399ff;
-  }
-  
-  .yellow {
-    background-color: #ffff66;
-  }
-  
-  .green {
-    background-color: #33cc33;
-  }
-  
+  background-color: #333;
+  padding: 10px;
+}
+
+.top-navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-navbar ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.top-navbar ul li button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.top-navbar ul li button.active {
+  font-weight: bold;
+}
+
+.page-content {
+  padding: 20px;
+}
+
+.card-container {
+  text-align: center; 
+}
+.card {
+  background-color: #f4f4f4;
+  display: inline-block;
+  width: 20%; 
+  max-width: 20%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-sizing: border-box; 
+  height: 250px; 
+}
+
+.card.completed {
+  background-color: #b7e1cd; /* 綠色 */
+}
+
+.card.incomplete {
+  background-color: #f7c6c5; /* 紅色 */
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card h3 {
+  text-align: top;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 40px;
+}
+
+.card h5 {
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+}
+/***********************************************************/
+.card.pgTwo {
+  background-color: #b0e2f0;
+}
+/***********************************************************/
+.cardThree {
+  background-color: #f4f4f4;
+  display: inline-block;
+  width: 20%; 
+  max-width: 20%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-sizing: border-box; 
+  height: 350px; 
+}
+
+.cardThree.completed {
+  background-color: #b7e1cd;
+}
+
+.cardThree.incomplete {
+  background-color: #f7c6c5;
+}
+
+.cardThree h2 {
+  margin-top: 0;
+}
+
+.cardThree h3 {
+  text-align: top;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 60px;
+}
+
+.cardThree h5 {
+  color: #888;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.cardThree:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.containerThree {
+  padding: 2px 16px;
+}
+
+.imgThree {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+}
+/***********************************************************/
