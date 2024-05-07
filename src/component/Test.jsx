@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './TopNavbar.css';
-
+//-------------------------------------------------------------//
 const TopNavbar = () => {
     const [currentPage, setCurrentPage] = useState('one');
 
@@ -28,7 +28,7 @@ const TopNavbar = () => {
         </>
     );
 };
-
+//-------------------------------------------------------------//
 const OnePage = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState('');
@@ -67,7 +67,7 @@ const OnePage = () => {
         </div>
     );
 };
-
+//-------------------------------------------------------------//
 const TwoPage = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState('');
@@ -107,7 +107,7 @@ const TwoPage = () => {
         </div>
     );
 };
-
+//-------------------------------------------------------------//
 const ThreePage = () => {
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState('');
@@ -147,15 +147,74 @@ const ThreePage = () => {
         </div>
     );
 };
+//-------------------------------------------------------------//
+const FourPage = () => {
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('https://ap-southeast-1.aws.data.mongodb-api.com/app/data-sjvpeue/endpoint/data/v1/action/find', {
+                    method: 'READ',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'api-key': 'ZIv91drKxnV0haz5hAvYVnN93sybQ6BddVo0PqjS6le6JyEpYlYk74wl5VBvJRxo'
+                    },
+                    body: JSON.stringify({
+                        collection: 'twse',
+                        database: 'TwStock',
+                        dataSource: 'Cluster0',
+                        filter: {},
+                        sort: { date: 1 }
+                    })
+                });
 
+                if (!response.ok) {
+                    throw new Error('无法获取数据');
+                }
 
+                const responseData = await response.json();
+                setData(responseData);
+                setLoading(false);
+            } catch (error) {
+                console.error('获取数据时出错:', error.message);
+                setLoading(false);
+            }
+        };
 
+        fetchData();
+    }, []);
 
+    return (
+        <div>
+            <h1>第四页</h1>
+            {loading ? (
+                <p>正在加载数据...</p>
+            ) : (
+                <div>
+                    {data.map((item, index) => (
+                        <div key={index} className="data-item">
+                            <p><strong>_id:</strong> {item._id}</p>
+                            <p><strong>日期:</strong> {item.date}</p>
+                            <p><strong>股票编号:</strong> {item.stockno}</p>
+                            <p><strong>股份:</strong> {item.shares}</p>
+                            <p><strong>金额:</strong> {item.amount}</p>
+                            <p><strong>开盘:</strong> {item.open}</p>
+                            <p><strong>收盘:</strong> {item.close}</p>
+                            <p><strong>最高:</strong> {item.high}</p>
+                            <p><strong>最低:</strong> {item.low}</p>
+                            <p><strong>差异:</strong> {item.diff}</p>
+                            <p><strong>交易量:</strong> {item.turnover}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
 
-
-const FourPage = () => (
-    <div>4</div>
-);
 
 export default TopNavbar;
+
+
