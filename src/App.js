@@ -17,7 +17,8 @@ import './App.css';
 // import Cart from './component/Cart';
 // import Login from './component/Login';
 // import EffectLoadData from './component/EffectLoadData';
-import TopNavbar from './component/Test';
+// import TopNavbar from './component/Test';
+import ProductCounts from './component/ProductCounts';
 
 
 
@@ -45,8 +46,8 @@ function App() {
     {/* <Cart /> */}
     {/* <Login /> */}
     {/* <EffectLoadData/> */}
-    <TopNavbar/>
-    
+    {/* <TopNavbar/> */}
+    <ProductCounts/>
     </div>
   );
 }
